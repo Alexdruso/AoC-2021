@@ -1,6 +1,6 @@
 # :christmas_tree::gift::christmas_tree: Solutions for Advent of Code 2021 :christmas_tree::gift::christmas_tree:
 
-This year, I will complete the challenge with Python, properly structured through scripts
+This year, I will complete the challenge with Python, properly structured through scripts.
 
 Merry Christmas Everyone! :christmas_tree:
 
