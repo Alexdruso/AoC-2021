@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     print(
         'The answer to part one is {}'.format(
-            submarine.vertical * submarine.horizontal
+            submarine.vertical_position * submarine.horizontal_position
         )
     )
 
@@ -27,6 +27,6 @@ if __name__ == '__main__':
 
     print(
         'The answer to part two is {}'.format(
-            submarine.vertical * submarine.horizontal
+            submarine.vertical_position * submarine.horizontal_position
         )
     )

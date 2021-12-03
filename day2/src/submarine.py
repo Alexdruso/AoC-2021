@@ -3,8 +3,8 @@ from typing import List, Tuple
 
 class Submarine:
     def __init__(self):
-        self.horizontal: int = 0
-        self.vertical: int = 0
+        self.horizontal_position: int = 0
+        self.vertical_position: int = 0
         self.commands = {
             'forward': self._move_forward,
             'up': self._move_up,
@@ -12,15 +12,15 @@ class Submarine:
         }
 
     def _move_forward(self, x: int):
-        self.horizontal += x
+        self.horizontal_position += x
         return self
 
     def _move_up(self, x: int):
-        self.vertical -= x
+        self.vertical_position -= x
         return self
 
     def _move_down(self, x: int):
-        self.vertical += x
+        self.vertical_position += x
         return self
 
     def move(self, path: List[Tuple[str, int]]):
@@ -35,8 +35,8 @@ class FixedSubmarine(Submarine):
         self.aim: int = 0
 
     def _move_forward(self, x: int):
-        self.horizontal += x
-        self.vertical += self.aim * x
+        self.horizontal_position += x
+        self.vertical_position += self.aim * x
         return self
 
     def _move_up(self, x: int):
