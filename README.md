@@ -10,8 +10,8 @@ Merry Christmas Everyone! :christmas_tree:
 | --- | --- | --- | --- |
 |   1  | :heavy_check_mark: | :heavy_check_mark: |  |
 |   2  | :heavy_check_mark: | :heavy_check_mark: |  |
-|   3  | :x: | :x: |  |
-|   4  | :x: | :x: |  |
+|   3  | :heavy_check_mark: | :heavy_check_mark: | Not my best code tbh |
+|   4  | :heavy_check_mark: | :heavy_check_mark: |  |
 |   5  | :x: | :x: |  |
 |   6  | :x: | :x: |  |
 |   7  | :x: | :x: |  |
