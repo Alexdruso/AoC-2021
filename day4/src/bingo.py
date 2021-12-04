@@ -73,3 +73,52 @@ class BingoBoard:
     @property
     def score(self) -> int:
         return sum(self.unmarked_numbers) * self.random_order[self._current_number_index]
+
+
+class RiggedBingoBoard(BingoBoard):
+
+    def __init__(self, file_path: str):
+        self.last_board: List[List[int]] = [[]]
+        super().__init__(file_path)
+
+    def check_victory(self) -> bool:
+        drawn_numbers = set(self.random_order[:self._current_number_index + 1])
+        previous_drawn_numbers = drawn_numbers - {self.random_order[self._current_number_index]}
+
+        previous_losing = list(
+            filter(
+                    lambda board: not _check_victory_on_board(board, previous_drawn_numbers),
+                    self.random_boards
+                )
+        )
+
+        current_losing = list(
+            filter(
+                    lambda board: not _check_victory_on_board(board, drawn_numbers),
+                    self.random_boards
+                )
+        )
+
+        if len(previous_losing) == 1 and len(current_losing) == 0:
+            self.last_board = next(
+                filter(
+                    lambda board: not _check_victory_on_board(board, previous_drawn_numbers),
+                    self.random_boards
+                ),
+                None
+            )
+
+            return True
+
+        return False
+
+    @property
+    def unmarked_numbers(self) -> List[int]:
+        drawn_numbers = set(self.random_order[:self._current_number_index + 1])
+
+        return [
+            number
+            for row in self.last_board
+            for number in row
+            if number not in drawn_numbers
+        ]
